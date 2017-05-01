@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Multiplayer Guess the Country</title>
+
+    <!-- CSS reset sheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+
+    <!-- Our Own CSS File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Firebase Link -->
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <div id="sizer">
+
+      <div id="swap-zone"><input id="username" placeholder="Name"/>
+        <button id="start">Start</button>
+      </div>
+
+      <div id="current-turn"></div>
+
+      <div id="game-div">
+
+        <div id="player1">
+          <h3 id="player1-name">Player1</h3>
+          <img id="player1-pic" src="">
+          <ul>
+          </ul>
+          <div id="player1-chosen"></div>
+          <div class="outcomes">
+            
+            <div class="outcome-trackers" id="player1-score"></div>
+          </div>
+        </div>
+
+        <div id="result"></div>
+
+        <div id="player2">
+          <h3 id="player2-name">Player2</h3>
+          <img id="player2-pic" src="">
+          <ul>
+          </ul>
+          <div id="player2-chosen"></div>
+          <div class="outcomes">
+            
+            <div class="outcome-trackers" id="player2-score"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="chat">
+        <div id="chat-messages"></div>
+        <div id="chat-bar">
+          <input id="chat-input" />
+          <button id="chat-send">Send</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- Script -->
+    <script src="assets/javascript/logic.js"></script>
+
+  </body>
+
+</html>
+
