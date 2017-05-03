@@ -193,7 +193,7 @@ playersRef.on("value", function(snapshot) {
         var p1pic;
 
         $.ajax({
-                url: queryURL,
+                url: queryURL,W
                 method: "GET"
             })
             .done(function(response) {
