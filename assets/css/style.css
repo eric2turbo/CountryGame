@@ -1,235 +1,199 @@
-body {
-  /* Visual */
-  background-color: #e4f0d0;
+body{
+	background-color:#292929;
+	font-family: "verdana", cursive;
+	color: white;
+	margin:0 auto;
 }
 
-header {
-  /* Visual */
-  background-color: #c2d8b9;
+.mainHeading{
+	background-color: green;
+	height: 60px;
+	margin-top: 5px;
+	padding-top: 10px;
+	border-radius: 5px;
+	margin:5px;
+	font-size: 30px;
 }
 
-h1 {
-  /* Visual */
-  padding: 15px;
-
-  /* Typography */
-  font-size: 36px;
-  text-align: center;
+.myModal{
+	display: block; 
+	float: right; 
+	margin-top:-50px; 
+	margin-right: 90px;
+	margin-bottom:15px;
+	font-size: 17px;
+	padding:2px;
+	color: black;
+	border-radius: 5px; 
+	width:165px;
+	background-color: white;
+	color: black;
+	text-align: center;
 }
 
-h2 {
-  /* Typography */
-  font-size: 24px;
+.login-panel{
+    margin-left: 25px;
+    margin-top:10px;
+	height: 40px;
+	max-width: 300px;
+	color: white;
+	border-style: solid none solid none;
+	border-image: initial;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: lightgray;
 }
 
-input {
-  /* Visual */
-  background-color: #fffcf7;
+.login-input{
+    margin-top: 2px;
+    margin-left: 5px;
+	color: black;
+	height:30px; 
+	width:130px; 
 }
 
-#sizer {
-  /* Box-model */
-  width: 1024px;
-
-  /* Positioning */
-  margin: 0 auto;
+.login-button{
+    margin-top: 2px;
+	margin-left: 5px;
+    padding-bottom: 5px; 
+	border-radius: 7px; 
+	height: 30px;
+	width: 70px;
 }
 
-/***********************************
+.avatar{
+	width:225px; 
+	height: 225px;
+	border:solid;
+	border-width: 5px;
+	border-radius: 5px;
+	border-color: yellow; 
+	box-shadow: 10px 10px 5px #888888;
 
-              SwapZone
-
-***********************************/
-
-#swap-zone {
-  /* Box-model */
-  width: 75%;
-
-  /* Positioning */
-  margin: 25px auto;
-
-  /* Typography */
-  text-align: center;
+	margin-left:10px;
+    margin-top:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+	border-style:solid;
 }
 
-#swap-zone input {
-  /* Box-model */
-  width: 200px;
-  height: 30px;
-
-  /* Typography */
-  font-size: 30px;
+.teammate{
+	font-size: 20px;
+	margin-left: -8px;
+	margin-right: 40px;
+	margin-top: -50px;
+	background-color: green;
+	text-align: left;
 }
 
-#swap-zone button {
-  /* Box-model */
-  width: 100px;
-  height: 36px;
-
-  /* Typography */
-  font-size: 22px;
-
-  /* Positioning */
-  vertical-align: top;
+.pointslabel{
+	margin-top:10px;
+	margin-left: 10px; 
+	font-size:9px;
+	float: right;
 }
 
-/***********************************
-
-              Turn Indicator
-
-***********************************/
-
-#current-turn {
-  /* Box-model */
-  width: 75%;
-
-  /* Positioning */
-  margin: 15px auto;
-
-  /* Typography */
-  text-align: center;
+.points{
+	font-size: 20px;
+	background-color: #ff6262;
+	float:right;
 }
 
-/***********************************
-
-              GameDiv
-
-***********************************/
-#game-div {
-  /* Typography */
-  text-align: center;
+.question-image{
+	width:100%; 
+	height: 220px;
+	margin-left:10px;
+    margin-top:3px;
+    margin-right:10px;
+    margin-bottom:10px;
+	border-style:solid;
+	border-color: yellow;
+	border-width: 3px;
+	border-radius: 8px;
+	box-shadow: 10px 10px 5px #888888;
 }
 
-#player1,
-#result,
-#player2 {
-  position: relative;
-  display: inline-block;
-
-  /* Box-model */
-  width: 25%;
-  height: 200px;
-  box-sizing: border-box;
-  padding: 10px;
-
-  /* Positioning */
-  margin: 2%;
-
-  /* Typography */
-  text-align: center;
-  vertical-align: top;
-
-  /* Visual */
-  border: 1px solid #000;
+ 
+ .w3-circle{
+ 	margin-top:10px; 
+ 	margin-left:15px; 
+ 	width: 170px; 
+ 	height: 170px; 
+ 	background-color: black; 
+ 	color: white; 
+ 	border-color: yellow; 
+ 	border-style: solid; 
+ 	border-width: 2px;
+ 	padding-top: 4px; 
+ 	font-size: 80px; 
+ 	padding-top:20px;
 }
 
-#player1-name,
-#player2-name {
-  /* Positioning */
-  margin-bottom: 15px;
 
-  /* Typography */
-  font-size: 28px;
+.chat-panel{
+	height: 270px;
+	border:solid;
+	border-width: .5px;
+	border-radius: 5px;
+	border-color: gray;
+	margin-bottom: 30px;
+	margin-top: 15px;
+
+}      
+
+.chat-message-list{
+	height: 180px;
+	width: 60%
+	margin-top: 20px;
+	border:solid;
+	border-width: 3px;
+	border-radius: 5px;
+	border-color: gray;
+	background-color: white;
+	overflow-y: auto;
+	color: black;
+	box-shadow: 7px 7px 5px #888888;
 }
 
-#player1-chosen,
-#player2-chosen {
-  /* Positioning */
-  margin-top: 25px;
+.chat-message{
+	border:solid;
+	border-width: 3px;
+	border-radius: 5px;
+	border-color: gray;
+	background-color: white;
+	overflow-y: auto;
+	color: black;
+	margin-top: 15px; 
+	height: 55px;
+}   
 
-  /* Typography */
-  font-size: 60px;
+.chat-input{
+	height: 30px; 
+	width:60%; 
+	margin-top: 5px;
+	margin-left: 3px;
 }
 
-li {
-  /* Positioning */
-  margin: 12px 0;
-
-  /* Typography */
-  font-size: 24px;
+.chat-send-button{
+	height: 30px;
+	margin-top: 8px;
+	margin-bottom:8px;
+	border-width: .5px;
+	border-radius: 5px;
+	border-color: yellow;
 }
 
-.outcomes {
-  /* Positioning */
-  position: absolute;
-  bottom: 10px;
-
-  /* Box-model */
-  width: 90%;
-
-  /* Typography */
-  text-align: center;
+.answer{
+	font-size:70px;
+	/*visibility: hidden;*/
+	position:fixed;
+	top:150px;
+	left:400px;
+	z-index: 1000;
+	color:white;
+	background-color: #292929;
+	border-radius: 5px;
+	width: 800px;
+	text-align: center;
 }
 
-.outcome-trackers { /* Box-model */
-  display: inline-block;
-}
-
-#result h2 {
-  /* Positioning */
-  margin-top: 20px;
-
-  /* Typography */
-  font-size: 60px;
-}
-
-/***********************************
-
-            Chatbox
-
-***********************************/
-
-#chat {
-  /* Positioning */
-  position: relative;
-
-  /* Box-model */
-  width: 600px;
-  height: 150px;
-
-  /* Visual */
-  padding: 10px;
-  margin: 20px auto;
-}
-
-#chat-messages {
-  /* Box-model */
-  height: 125px;
-  overflow: auto;
-
-  /* Visual */
-  background-color: #fffcf7;
-}
-
-#chat-bar {
-  /* Positioning */
-  position: absolute;
-  bottom: 10px;
-}
-
-#chat-input {
-  /* Box-model */
-  width: 550px;
-}
-
-#chat-send {
-  /* Box-model */
-  width: 40px;
-}
-
-.player1 {
-  /* Visual */
-  color: #419d78;
-}
-
-.player2 {
-  /* Visual */
-  color: #2d3047;
-}
-
-.player0 {
-  color: #000;
-
-  /* Visual */
-  background-color: #d3d3d3;
-}

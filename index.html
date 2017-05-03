@@ -1,84 +1,156 @@
 <!DOCTYPE html>
-
-<html lang="en-us">
-
-  <head>
-
-    <meta charset="UTF-8">
-    <title>Multiplayer Guess the Country</title>
-
-    <!-- CSS reset sheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-
-    <!-- Our Own CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Firebase Link -->
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
-
-  </head>
-
-  <body>
-
-    <header>
-      <h1>Rock Paper Scissors</h1>
-    </header>
-
-    <div id="sizer">
-
-      <div id="swap-zone"><input id="username" placeholder="Name"/>
-        <button id="start">Start</button>
-      </div>
-
-      <div id="current-turn"></div>
-
-      <div id="game-div">
-
-        <div id="player1">
-          <h3 id="player1-name">Player1</h3>
-          <img id="player1-pic" src="">
-          <ul>
-          </ul>
-          <div id="player1-chosen"></div>
-          <div class="outcomes">
-            
-            <div class="outcome-trackers" id="player1-score"></div>
-          </div>
-        </div>
-
-        <div id="result"></div>
-
-        <div id="player2">
-          <h3 id="player2-name">Player2</h3>
-          <img id="player2-pic" src="">
-          <ul>
-          </ul>
-          <div id="player2-chosen"></div>
-          <div class="outcomes">
-            
-            <div class="outcome-trackers" id="player2-score"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <div id="chat">
-        <div id="chat-messages"></div>
-        <div id="chat-bar">
-          <input id="chat-input" />
-          <button id="chat-send">Send</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-    <!-- Script -->
+<html>
+<head>
+    <title>Pictionology</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css"> -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+   
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/zoomInDown.css">
+    <!--Timer-->
     <script src="assets/javascript/logic.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--main logic-->
+    
+</head>
+<body>
 
-  </body>
+    <!-- NEW LAYOUT - mainContainer -->
+    <div class="container-fluid">
 
+         <div class="col-lg-12 " >
+            <center><h1 class="mainHeading">Pictionology</h1></center>
+            <!-- Button trigger modal -->
+            <a class="myModal animated fadeInRight" href="#" data-toggle="modal" data-target="#myModal">How To Play</a>
+         </div>
+
+        <div class="row row1">
+
+            <!--LEFT PANEL-->
+            <div class="col-md-3"> 
+                
+                <!-- LOGIN -->
+                <div class="col-md-12 login-panel animated fadeInLeft">
+                    <input type="text" class="login-input"  id="username" placeholder="Your name"/>
+                    <button class="btn btn-primary login-button" id="start">Login</button>
+                </div>
+                
+                <!-- PLAYER 1 -->
+                <div class="col-md-12">
+                    <div>
+                        <div class="col-lg-12">
+                            <img class="avatar" id="player1-pic" src="assets/images/egg.jpg">
+                        </div>
+                        <div class="col-lg-12 teammate">
+                            <span id="player1-name">Player 1</span>
+                            <span class="pointslabel">points</span>
+                            <span class="badge points" id="player1-score">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLAYER 2 -->
+                <div class="col-md-12">
+                    <div>
+                        <div class="col-lg-12">
+                            <img class="avatar" id="player2-pic" src="assets/images/egg.jpg">
+                        </div>
+                        <div class="col-lg-12 teammate">
+                            <span id="player2-name">Player 2</span>
+                            <span class="pointslabel">points</span>
+                            <span class="badge points" id="player2-score">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--RIGHT PANEL-->
+            <div class="col-md-9">
+                <div class="col-md-6">
+                        <img class="question-image" id="cImg" src="assets/images/usa.png">
+                </div>
+                <div class="col-md-6">
+                        <div id="api">
+                           
+                        </div>
+                </div>
+            
+                            
+                <!-- Chat Panel -->
+                <div class="col-md-12 chat-panel">  
+                    <div class="col-lg-12">
+                        <!-- chat box -->
+                        <div class="col-lg-8 chat-message-list  animated zoomInDown" id="chat-messages"> 
+                           
+                        </div>
+                        <!-- Timer -->
+                        <div class="col-lg-4">
+                            <div>
+                                <div class= "w3-circle" id='mid-col'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+
+                        <!-- chat message -->
+                        <div class="chat-message">
+                            <label>Message:</label>
+                            <input class="chat-input" type="text" id="chat-input">
+                            <button class="btn btn-primary chat-send-button" id="chat-send">Send Message</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        
+        </div> <!--End row1 -->
+        <!-- answer -->
+        <div class="answer" id="show-answer">
+            
+        </div>
+
+     </div> <!--End mainContainer -->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body" style="color: black;">
+           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                Why do we use it?
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+             </p> 
+   
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<!--Modal How to play - end --------------------------------------------------------------------------------------------------- -->
+    
+</body>
 </html>
-

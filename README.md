@@ -1,1 +1,1 @@
-# CountryGame
+# Pictinology
