@@ -176,7 +176,7 @@ playersRef.on("value", function(snapshot) {
 
     // If theres a player 1, fill in name and win loss data
     if (playerOneExists) {
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             playerOneData.name + "&api_key=dc6zaTOxFJmzC&limit=3";
         var p1pic;
 
@@ -212,7 +212,7 @@ playersRef.on("value", function(snapshot) {
 
     // If theres a player 2, fill in name and win/loss data
     if (playerTwoExists) {
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             playerTwoData.name + "&api_key=dc6zaTOxFJmzC&limit=3";
         var p2pic;
 
@@ -291,7 +291,7 @@ currentStageRef.on("value", function(snapshot) {
                 // change variable cC to use for WBank ajax
                 countryCode = response[0].alpha2Code;
                 
-                var queryURLWB = "http://api.worldbank.org/v2/countries/" + countryCode + "?format=json";
+                var queryURLWB = "https://api.worldbank.org/v2/countries/" + countryCode + "?format=json";
                 //ajax within Ajax for World Bank
                 $.ajax({
                     url: queryURLWB,
